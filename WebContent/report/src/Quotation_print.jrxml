@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Quotation" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="317"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="672"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="THSarabun" fontSize="50" isBold="false" pdfFontName="Times-Bold">
+		<box>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="THSarabun" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="THSarabun" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="THSarabun"/>
+	<style name="Row" mode="Transparent" fontName="THSarabun" pdfFontName="Times-Roman">
+		<box>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#EEEFF0"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table" mode="Transparent">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Transparent" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Transparent" backcolor="#CACED0">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Transparent" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#D8D8D8"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table 1_TH" mode="Transparent" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#FFBFF0">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Transparent" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Transparent" backcolor="#C3CFD9">
+		<box>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Transparent" backcolor="#E6F3FF">
+		<box>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Transparent" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="list" uuid="88d5b904-8cfd-4fef-87c7-a3410780accf">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+		<parameter name="TABLE_ID" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT
+CONCAT(paper.paper_name,' ',
+paper.paper_color) AS part_paper_type,
+paper.paper_weight AS part_substance,
+product_specification.part_ink_onface,
+product_specification.part_ink_backface,
+product_specification.part_vert_perf,
+product_specification.part_horz_perf,
+product_specification.part_remark,
+product_specification.paper_id,
+paper.paper_name,
+paper.paper_weight,
+paper.paper_color
+FROM
+product_specification
+INNER JOIN paper ON product_specification.paper_id = paper.paper_id
+WHERE product_specification.product_id = $P!{TABLE_ID}]]>
+		</queryString>
+		<field name="part_paper_type" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="part_paper_type"/>
+		</field>
+		<field name="part_substance" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="part_substance"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="paper"/>
+		</field>
+		<field name="part_ink_onface" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="part_ink_onface"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="part_ink_backface" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="part_ink_backface"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="part_vert_perf" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.label" value="part_vert_perf"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="part_horz_perf" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.label" value="part_horz_perf"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="part_remark" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="part_remark"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="paper_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.label" value="paper_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="paper_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="paper_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="paper"/>
+		</field>
+		<field name="paper_weight" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="paper_weight"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="paper"/>
+		</field>
+		<field name="paper_color" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="paper_color"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="paper"/>
+		</field>
+	</subDataset>
+	<parameter name="REPORT_DOC_ID" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+quotation.quotation_id,
+quotation.product_id,
+quotation.customer_id,
+quotation.sale_id,
+quotation.quotation_date,
+quotation.despatch_require,
+quotation.price_detail,
+quotation.additional_detail,
+product.product_name,
+product.product_quantity,
+product.product_constat,
+product.product_total_page,
+product.product_other,
+product.product_unit_set,
+product.product_form_depth,
+product.product_form_width,
+CONCAT(product.product_start_page,' ',
+product.product_end_page) AS se_page,
+CONCAT(customer.c_organization_name,' ',
+customer.c_address,' ',
+customer.c_contact),
+sale.sale_no
+FROM
+quotation
+INNER JOIN product ON quotation.product_id = product.product_id
+INNER JOIN customer ON quotation.customer_id = customer.customer_id
+INNER JOIN sale ON quotation.sale_id = sale.sale_id
+WHERE 
+	quotation.quotation_id = $P!{REPORT_DOC_ID}]]>
+	</queryString>
+	<field name="quotation_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="quotation_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="quotation"/>
+	</field>
+	<field name="product_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="product_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="quotation"/>
+	</field>
+	<field name="customer_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="customer_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="quotation"/>
+	</field>
+	<field name="sale_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="sale_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="quotation"/>
+	</field>
+	<field name="quotation_date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="quotation_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="quotation"/>
+	</field>
+	<field name="despatch_require" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="despatch_require"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="quotation"/>
+	</field>
+	<field name="price_detail" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="price_detail"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="quotation"/>
+	</field>
+	<field name="additional_detail" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="additional_detail"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="quotation"/>
+	</field>
+	<field name="product_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_quantity" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_quantity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_constat" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="product_constat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_total_page" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_total_page"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_other" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_other"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_unit_set" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="product_unit_set"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_form_depth" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_form_depth"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_form_width" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_form_width"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="se_page" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="se_page"/>
+	</field>
+	<field name="CONCAT(customer.c_organization_name,&apos; &apos;,&#xA;customer.c_address,&apos; &apos;,&#xA;customer.c_contact)" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label">
+			<![CDATA[CONCAT(customer.c_organization_name,' ',
+customer.c_address,' ',
+customer.c_contact)]]>
+		</property>
+	</field>
+	<field name="sale_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sale_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sale"/>
+	</field>
+	<sortField name="quotation_id"/>
+	<title>
+		<band height="75" splitType="Stretch">
+			<textField pattern="dd/M/yy">
+				<reportElement mode="Transparent" x="496" y="46" width="56" height="29" uuid="bb10dbe1-0a4f-4722-9953-c163b63cf979"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quotation_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="502" y="10" width="53" height="29" uuid="3836ce65-eca3-4cad-a6de-b1818def0a2b"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quotation_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="160">
+			<textField>
+				<reportElement mode="Transparent" x="425" y="135" width="120" height="25" uuid="c7ee75d1-604f-4a5c-921f-59b78228dcfc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{se_page}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="373" y="135" width="40" height="25" uuid="5ecdad07-1b10-4d7e-b112-5e36d95e464d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_form_width}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="324" y="135" width="40" height="25" uuid="97c54482-04b3-4622-9b76-ffec41de1def"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_form_depth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="360" y="13" width="132" height="30" uuid="70f14118-f423-4774-8637-9010a9e8c3d0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="180" y="135" width="40" height="25" uuid="49f67c63-ff95-4407-8340-53fc18c50acd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_constat}?"X":"-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="508" y="15" width="40" height="30" uuid="ed4140cf-8c03-4834-8a3b-c0d5ea315bd1"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="330" y="83" width="50" height="24" uuid="04809235-0fb8-49da-ab86-d7d1ab60b6c0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sale_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="130" y="135" width="40" height="25" uuid="f6cc6dbc-012b-49a4-aa2b-3e9c4b144f98"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_total_page}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="502" y="83" width="52" height="24" uuid="b60c6d28-4ad7-493f-ad08-88ba528dd34f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{despatch_require}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="34" y="135" width="90" height="25" uuid="1f618354-06b4-4e49-a037-3ba5bbe7c3e4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="37" y="9" width="273" height="96" uuid="06e930ca-958c-40a3-a5a9-c8da88b149da"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+					<paragraph lineSpacingSize="4.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CONCAT(customer.c_organization_name,' ',
+customer.c_address,' ',
+customer.c_contact)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="227" y="135" width="40" height="25" uuid="0f5d04e5-8f82-44e8-83c3-43056f2d2d0e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_unit_set}?"X":"-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="277" y="135" width="40" height="25" uuid="89248359-73f5-4a41-89be-bb75b08e80cf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_other}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="464">
+			<componentElement>
+				<reportElement style="Title" mode="Transparent" x="86" y="27" width="466" height="23" uuid="8f9a47a9-f850-4081-99ab-640aca7def3a">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 2_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 2_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 2_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="Blank">
+					<datasetRun subDataset="list" uuid="a6a83aa0-4daa-484a-93b8-e3af192479e4">
+						<datasetParameter name="TABLE_ID">
+							<datasetParameterExpression><![CDATA[$F{product_id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="95" uuid="ffc60a1a-4233-4909-996d-27cbc91fd0a8">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:detailCell style="Table 2_TD" height="22">
+							<box>
+								<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+							</box>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="95" height="22" uuid="1c78566f-d449-4fb4-9bee-4e739cb13974"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_paper_type}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="45" uuid="266cbf07-9a53-4f05-910a-544dab2e9a7b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:detailCell style="Table 2_TD" height="22">
+							<box>
+								<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="45" height="22" uuid="92631b87-b56b-4051-9283-516aaf3ab2fd"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_substance}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="49" uuid="9e3d23ca-62a6-402d-ad70-acb6c7fcb287">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:detailCell style="Table 2_TD" height="22">
+							<box>
+								<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="49" height="22" uuid="a4e8936b-1e7c-41e2-b864-1f860674cf39"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_ink_onface}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="57" uuid="661b416a-38c7-4c48-b276-7419c0244762">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:detailCell style="Table 2_TD" height="22">
+							<box>
+								<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="57" height="22" uuid="2794a887-ce11-4091-bf3e-e197ea77203f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_ink_backface}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="71" uuid="43f8def3-2801-4928-b56c-4711033327fe">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:detailCell style="Table 2_TD" height="22">
+							<box>
+								<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="71" height="22" uuid="0e4a5437-7204-41b0-8b9c-46db67742397"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_horz_perf}?"X":"-"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="69" uuid="37893578-2cdb-437e-bfd8-024ca059047a">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:detailCell style="Table 2_TD" height="22">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement key="" x="0" y="0" width="69" height="22" uuid="d45550e2-4da1-43e2-bd5c-86808ede87d9"/>
+								<box>
+									<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_vert_perf}?"X":"-"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="5bb9e060-0f3c-4814-97e8-2404e0598110">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:detailCell style="Table 2_TD" height="22">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="80" height="22" uuid="dc33d5d8-0a13-4faa-9674-41c4db1bb839"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_remark}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<textField>
+				<reportElement mode="Transparent" x="43" y="338" width="337" height="43" uuid="7528e831-8f85-4110-ba72-28eebedeb7d9"/>
+				<textElement>
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{additional_detail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="150" y="246" width="402" height="64" uuid="cace0854-c15b-42c1-a2f2-270edd231027"/>
+				<textElement>
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{price_detail}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

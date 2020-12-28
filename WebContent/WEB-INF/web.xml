@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>report</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>quotation</servlet-name>
+    <jsp-file>/index.jsp</jsp-file>
+    <init-param>
+      <param-name>page</param-name>
+      <param-value>quotation</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>quotation</servlet-name>
+    <url-pattern>/quotation</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>review</servlet-name>
+    <jsp-file>/index.jsp</jsp-file>
+    <init-param>
+      <param-name>page</param-name>
+      <param-value>review</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>review</servlet-name>
+    <url-pattern>/review</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>workorder</servlet-name>
+    <jsp-file>/index.jsp</jsp-file>
+    <init-param>
+      <param-name>page</param-name>
+      <param-value>workorder</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>workorder</servlet-name>
+    <url-pattern>/workorder</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>customer</servlet-name>
+    <jsp-file>/index.jsp</jsp-file>
+    <init-param>
+      <param-name>page</param-name>
+      <param-value>customer</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>customer</servlet-name>
+    <url-pattern>/customer</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>sale</servlet-name>
+    <jsp-file>/index.jsp</jsp-file>
+    <init-param>
+      <param-name>page</param-name>
+      <param-value>sale</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sale</servlet-name>
+    <url-pattern>/sale</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>paper</servlet-name>
+    <jsp-file>/index.jsp</jsp-file>
+    <init-param>
+      <param-name>page</param-name>
+      <param-value>paper</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>paper</servlet-name>
+    <url-pattern>/paper</url-pattern>
+  </servlet-mapping>
+</web-app>

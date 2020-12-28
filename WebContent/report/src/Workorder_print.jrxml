@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Workorder" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="6e689d35-64a7-4390-9de9-b8adda6c7637">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="616"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="370"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<style name="Table_TH" mode="Opaque" backcolor="rgba(240, 248, 255, 0.0)">
+		<box>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="rgba(191, 225, 255, 0.0)">
+		<box>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="rgba(255, 255, 255, 0.0)">
+		<box>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="79d50ef3-e24d-4302-8697-49cd24ead20c">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+		<parameter name="REPORT_DOC_ID" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT
+CONCAT(paper.paper_name,' ',
+paper.paper_color) AS part_paper_type,
+paper.paper_weight AS part_substance,
+product_specification.part_ink_onface,
+product_specification.part_ink_backface,
+product_specification.part_vert_perf,
+product_specification.part_horz_perf,
+product_specification.part_remark,
+product_specification.paper_id,
+paper.paper_name,
+paper.paper_weight,
+paper.paper_color
+FROM
+product_specification
+INNER JOIN paper ON product_specification.paper_id = paper.paper_id
+WHERE
+	product_specification.product_id = $P!{REPORT_DOC_ID}]]>
+		</queryString>
+		<field name="part_paper_type" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="part_paper_type"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="part_substance" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="part_substance"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="paper"/>
+		</field>
+		<field name="part_ink_onface" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="part_ink_onface"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="part_ink_backface" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="part_ink_backface"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="part_vert_perf" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.label" value="part_vert_perf"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="part_horz_perf" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.label" value="part_horz_perf"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="part_remark" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="part_remark"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="paper_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.label" value="paper_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="product_specification"/>
+		</field>
+		<field name="paper_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="paper_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="paper"/>
+		</field>
+		<field name="paper_weight" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="paper_weight"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="paper"/>
+		</field>
+		<field name="paper_color" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="paper_color"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="paper"/>
+		</field>
+	</subDataset>
+	<parameter name="REPORT_DOC_ID" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+workorder.workorder_id,
+workorder.quotation_id,
+workorder.customer_id,
+workorder.product_id,
+workorder.sale_id,
+workorder.work_date,
+workorder.work_dispatch,
+workorder.work_sprocket_hole,
+workorder.work_crimping,
+workorder.work_glue,
+workorder.work_form_folding,
+workorder.work_packing_set,
+workorder.work_packing,
+workorder.work_additional_detail,
+product.product_name,
+product.product_quantity,
+product.product_total_page,
+product.product_constat,
+product.product_other,
+product.product_unit_set,
+product.product_form_depth,
+product.product_form_width,
+product.product_start_page,
+product.product_end_page,
+customer.c_organization_name,
+customer.c_address,
+customer.c_contact,
+sale.sale_no
+FROM
+workorder
+INNER JOIN product ON workorder.product_id = product.product_id
+INNER JOIN customer ON workorder.customer_id = customer.customer_id
+INNER JOIN sale ON workorder.sale_id = sale.sale_id
+WHERE 
+	 workorder.workorder_id = $P!{REPORT_DOC_ID}]]>
+	</queryString>
+	<field name="workorder_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="workorder_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="quotation_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="quotation_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="customer_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="customer_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="product_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="product_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="sale_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="sale_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="work_date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="work_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="work_dispatch" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="work_dispatch"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="work_sprocket_hole" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="work_sprocket_hole"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="work_crimping" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="work_crimping"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="work_glue" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="work_glue"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="work_form_folding" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="work_form_folding"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="work_packing_set" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="work_packing_set"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="work_packing" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="work_packing"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="work_additional_detail" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="work_additional_detail"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="workorder"/>
+	</field>
+	<field name="product_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_quantity" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_quantity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_total_page" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_total_page"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_constat" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="product_constat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_other" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_other"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_unit_set" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="product_unit_set"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_form_depth" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_form_depth"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_form_width" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_form_width"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_start_page" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_start_page"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_end_page" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product_end_page"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="c_organization_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_organization_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="c_address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="c_contact" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_contact"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="sale_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sale_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sale"/>
+	</field>
+	<title>
+		<band height="235" splitType="Stretch">
+			<textField>
+				<reportElement x="300" y="89" width="260" height="23" uuid="a685491f-af69-4cc1-bbc1-83c363b7ce36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="12" width="100" height="23" uuid="e12a8126-92e8-4198-9688-f8ff4df1b9a5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{workorder_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/M/yy">
+				<reportElement x="460" y="41" width="100" height="23" uuid="939ae66c-8eb5-4853-a74a-d75bff8a89f6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{work_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="89" width="258" height="85" uuid="8afdb309-957f-4946-90f4-fb80240e219f"/>
+				<box padding="4"/>
+				<textElement>
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_organization_name}+" "+$F{c_address}+" "+$F{c_contact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="150" width="97" height="24" uuid="b75e3320-b771-4986-b0d0-49023af86ab0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quotation_id}!=null?$F{quotation_id}:"-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="150" width="46" height="24" uuid="636d402a-76a6-44fb-8a29-062b5f49179a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sale_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="150" width="44" height="24" uuid="b5292a50-32d3-4d82-a16b-fb3c0b6a1267"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="205" width="100" height="24" uuid="2149427a-655b-45b6-b172-68b4334748f1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="205" width="48" height="24" uuid="437b50be-2423-4be1-b0b8-6c41de895a44"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_total_page}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="205" width="44" height="24" uuid="675349c3-35b2-4cc1-bc96-19c7c764f5ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_constat}?"X":"-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="205" width="48" height="24" uuid="b1e0b773-c922-4374-ba1b-19094f2990b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_unit_set}?"X":"-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="205" width="40" height="24" uuid="816ea56b-4b0d-4bec-b79d-04020d5b7c36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_other}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="205" width="46" height="24" uuid="471371d9-0a34-4c71-9367-d385c6a6774a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_form_depth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="205" width="45" height="24" uuid="b269d4b8-2665-4d3a-9880-bde045b2b33f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_form_width}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="420" y="205" width="120" height="24" uuid="f2aeb10a-7ad0-4110-90be-0ecd853d6386"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_start_page} + "-" +$F{product_end_page}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/M/yy">
+				<reportElement x="487" y="151" width="77" height="23" uuid="4497a336-1e80-420e-9f4a-9ae2a47af4f0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{work_dispatch}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="450" splitType="Stretch">
+			<componentElement>
+				<reportElement x="75" y="32" width="475" height="160" uuid="762fcce9-a325-4793-be56-0a5af1735dbf">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="Blank">
+					<datasetRun subDataset="Dataset1" uuid="11299807-8152-40da-bf8f-0d7e7a78dcca">
+						<datasetParameter name="REPORT_DOC_ID">
+							<datasetParameterExpression><![CDATA[$F{product_id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="87" uuid="5e7577b5-7c35-4ead-afef-64e5418d371f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:detailCell style="Table_TD" height="23">
+							<textField>
+								<reportElement x="0" y="0" width="87" height="23" uuid="6bf16278-e115-4b80-bc22-e9539e6d34ed"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_paper_type}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="53" uuid="eed53a64-1d25-4824-9fc0-755b1adc471d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:detailCell style="Table_TD" height="23">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="23" uuid="7991382e-e2d1-4109-b49f-6138c3b76bed"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_substance}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="53" uuid="653cc7a5-3ad7-4809-ae1b-04c6b0d1ed27">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:detailCell style="Table_TD" height="23">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="23" uuid="4b797ed9-4267-4dbe-81ba-095bf37070f6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_ink_onface}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="59" uuid="18740e46-78b8-4839-a259-700ba98a87c2">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:detailCell style="Table_TD" height="23">
+							<textField>
+								<reportElement x="0" y="0" width="59" height="23" uuid="3df18ff8-0ab7-4662-b5d8-d794e5d45886"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_ink_backface}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="68" uuid="c87045d4-5ada-407a-8c8c-fa738d505077">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:detailCell style="Table_TD" height="23">
+							<textField>
+								<reportElement x="0" y="0" width="68" height="23" uuid="b968f995-9813-4866-bb35-cd72aba580e9"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_horz_perf}?"X":"-"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="69" uuid="c7120e9d-c44d-46ac-885c-b99d9637a091">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:detailCell style="Table_TD" height="23">
+							<textField>
+								<reportElement x="0" y="0" width="69" height="23" uuid="205a1250-9748-427e-ac21-25aa02a82d25"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_vert_perf}?"X":"-"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="86" uuid="1861c6a1-4f68-4573-b0d4-0ebf664c27d8">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:detailCell style="Table_TD" height="23">
+							<textField>
+								<reportElement x="0" y="0" width="86" height="23" uuid="6898edbc-7e1d-4480-a601-ec27b38c880d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="THSarabun" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{part_remark}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<textField>
+				<reportElement x="343" y="291" width="68" height="22" uuid="5421246e-414e-45a7-b3c6-1a7bdfe314fd"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{work_packing_set}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="354" width="334" height="65" uuid="0fe04339-8508-4320-ac53-35331a4ec8fe"/>
+				<textElement>
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{work_additional_detail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="292" width="76" height="28" uuid="ce698481-5bfa-4d4c-a14d-b326e5cf7dbc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{work_form_folding}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="292" width="91" height="28" uuid="bf1417ec-0148-475f-b067-5493bf5495ad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{work_glue}?"X           ":"      X"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="292" width="85" height="28" uuid="5e4bd1e3-8ce6-4305-bd9a-06b01a6fd7bc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{work_crimping}?"X         ":"      X"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="292" width="80" height="28" uuid="221bb4df-9297-47dc-a8af-bdd654a9a728"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabun" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{work_sprocket_hole}?"X         ":"      X"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="343" y="305" width="68" height="22" uuid="2c9c6380-a528-4579-8af4-2f2fe863a6ad"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="THSarabun" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{work_packing}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="70" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

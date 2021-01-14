@@ -1,5 +1,7 @@
 # Report Builder
 
+![license](https://img.shields.io/github/license/lzy3me/report-builder?style=flat-square) ![release](https://img.shields.io/github/v/release/lzy3me/report-builder?style=flat-square)
+
 Report builder is my first freelance contact that didn't came out (because the problem about financial of client). It's basicly a web app form report generator that will be replace an oldest system (the original program was create for DOS on around 1990~)
 
 ## Demo Picture
